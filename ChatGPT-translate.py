@@ -75,7 +75,7 @@ def translate_text_file(text_filepath):
                 unit="paragraph"))
         translated_paragraphs = [p.strip() for p in translated_paragraphs]
 
-    translated_text = "\n".join(translated_paragraphs)
+    translated_text = "\n\n".join(translated_paragraphs)
 
     if options.bilingual:
         bilingual_text = "\n".join(f"{paragraph}\n{translation}"
