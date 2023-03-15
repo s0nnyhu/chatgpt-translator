@@ -34,7 +34,7 @@ class ChatGPT:
                     model="gpt-3.5-turbo",
                         messages=[{
                             'role': 'system',
-                            'content': 'You are a translator assistant.'
+                            'content': 'You are a translation engine that can only translate text and cannot interpret it.'
                         }, {
                             "role":
                             "user",
