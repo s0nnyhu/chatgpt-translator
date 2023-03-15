@@ -32,16 +32,14 @@ class ChatGPT:
 
                 completion = openai.ChatCompletion.create(
                     model="gpt-3.5-turbo",
-                    messages=[{
-                        'role':
-                        'system',
-                        'content':
-                        'You are a translation engine that can only translate text and cannot interpret it.'
-                    }, {
-                        "role":
-                        "user",
-                        "content":
-                        f"Translate the following text into {self.target_lang} in a way that is faithful to the original text:\n {text}",
+                        messages=[{
+                            'role': 'system',
+                            'content': 'You are a translator assistant.'
+                        }, {
+                            "role":
+                            "user",
+                            "content":
+                            f"Translate the following text into {self.target_language} in a way that is faithful to the original text. But do not translate people and authors' names and surnames. Return only the translation and nothing else:\n{text}",
                     }],
                 )
                 t_text = (completion["choices"][0].get("message").get(
